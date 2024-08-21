@@ -1,95 +1,62 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import gymSvg from "../assets/gym.svg";
+import logoSvg from "../assets/logo.svg";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <main>
+      <section
+        id="classe"
+        className="mx-auto flex p-4 flex-col h-screen w-full max-w-screen-xl"
+      >
+        <nav className="w-full mt-8 h-5 flex items-center justify-between ">
+          <Link href="/">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              className="h-12 w-12"
+              src={logoSvg}
+              alt="Logomarca da academia"
             />
-          </a>
+          </Link>
+
+          <div className="flex gap-8 items-center">
+            <Link
+              href="classe"
+              className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
+            >
+              Preço
+            </Link>
+            <Link
+              href="classe"
+              className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
+            >
+              Sobre
+            </Link>
+            <Link
+              href="classe"
+              className=" font-bold px-5 py-3 text-white bg-blue-700 hover:bg-blue-800 transition-colors rounded-full"
+            >
+              Começar
+            </Link>
+          </div>
+        </nav>
+        <div className="flex mt-20 items-center justify-between w-full ">
+          <div className="items-center justify-between">
+            <h1 className="text-left text-7xl leading-15 font-black text-stone-800 ">
+              Treine na academia dos seus{" "}
+              <span className="text-blue-700">sonhos</span>.
+            </h1>
+            <p className="text-lg text-stone-700 font-bold mt-8">
+              Nunca foi tão fácil treinar na academia perfeita.
+            </p>
+          </div>
+          <Image
+            className="w-full mt-10 max-w-2xl"
+            src={gymSvg}
+            alt="Ilustration of a gym."
+          />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
     </main>
   );
 }
