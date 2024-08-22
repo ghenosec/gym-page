@@ -5,8 +5,8 @@ import "../styles/globals.css";
 const dmSans = DMSans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GymStrong",
-  description: "GymStrong",
+  title: "GYM Strong",
+  description: "GYM Strong",
 };
 
 export default function RootLayout({
