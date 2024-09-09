@@ -1,4 +1,4 @@
-Por enquanto foi realizado somente essa "tela"
+"Projeto" de uma landin-page feito para estudo, usando next-js, typescript e tailwindcss.
 
 <img src="./prints/print1.jpg"></div>
 <img src="./prints/print2.png"></div>
