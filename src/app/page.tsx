@@ -85,30 +85,30 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="precos" className="mt-0">
+        <div id="precos" className="mt-4">
           {" "}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8">
+            {" "}
             <Image
               className="w-full max-w-full md:max-w-2xl"
               src={plansSvg}
               alt="Ilustração dos planos da academia."
             />
           </div>
-          <h2 className="text-2xl font-bold text-stone-800 text-center mb-12">
+          <h2 className="text-2xl font-bold text-stone-800 text-center mb-8">
+            {" "}
             Nossos Planos
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-8">
             <div className="card bg-white shadow-lg rounded-lg p-6 max-w-xs mx-auto">
               <h3 className="text-xl font-bold text-stone-800 mb-4 mt-8">
                 Plano Básico
-              </h3>{" "}
+              </h3>
               <p className="text-lg text-stone-700 mb-4 mt-4">
-                {" "}
                 Ideal para quem está começando e quer treinar 3 vezes por
                 semana.
               </p>
               <p className="text-2xl font-bold text-blue-700 mt-6">
-                {" "}
                 R$ 99,90/mês
               </p>
             </div>
@@ -116,29 +116,24 @@ export default function Home() {
             <div className="card bg-white shadow-lg rounded-lg p-6 max-w-xs mx-auto">
               <h3 className="text-xl font-bold text-stone-800 mb-4 mt-8">
                 Plano Intermediário
-              </h3>{" "}
+              </h3>
               <p className="text-lg text-stone-700 mb-4 mt-4">
-                {" "}
                 Perfeito para quem já tem alguma experiência e treina 5 vezes
                 por semana.
               </p>
               <p className="text-2xl font-bold text-blue-700 mt-6">
-                {" "}
                 R$ 149,90/mês
               </p>
             </div>
-            {/* Card 3 */}
             <div className="card bg-white shadow-lg rounded-lg p-6 max-w-xs mx-auto">
               <h3 className="text-xl font-bold text-stone-800 mb-4 mt-8">
                 Plano Premium
-              </h3>{" "}
+              </h3>
               <p className="text-lg text-stone-700 mb-4 mt-4">
-                {" "}
                 O pacote completo com acesso ilimitado e acompanhamento
                 personalizado.
               </p>
               <p className="text-2xl font-bold text-blue-700 mt-6">
-                {" "}
                 R$ 199,90/mês
               </p>
             </div>
