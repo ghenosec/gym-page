@@ -53,7 +53,7 @@ export default function Home() {
               <span className="text-blue-700">sonhos</span>.
             </h1>
             <p className="text-lg text-stone-700 font-bold mt-8">
-              Nunca foi tão fácil treinar na academia perfeita.
+              A academia perfeita para você, sem complicação.
             </p>
           </div>
           <Image
