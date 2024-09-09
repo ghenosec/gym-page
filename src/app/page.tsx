@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <section
-        id="classe"
+        id="home"
         className="mx-auto flex p-4 flex-col min-h-screen w-full max-w-screen-xl"
       >
         <nav className="w-full mt-8 flex flex-col md:flex-row items-center justify-between">
@@ -22,24 +22,27 @@ export default function Home() {
           </Link>
 
           <div className="links flex gap-4 items-center mt-4 md:mt-0">
-            <Link
-              href="#classe"
-              className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
-            >
-              Preço
-            </Link>
-            <Link
-              href="#classe"
+            <a
+              href="#sobre"
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
             >
               Sobre
-            </Link>
-            <Link
-              href="#classe"
+            </a>
+            <a
+              href="#precos"
+              className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
+            >
+              Preço
+            </a>
+
+            <a
+              href="https://www.clickjogos.com.br/jogos-de-casual/vestir-meninas-da-fitness"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-button font-bold px-5 py-3 text-white bg-blue-700 hover:bg-blue-800 transition-colors rounded-full "
             >
               Começar
-            </Link>
+            </a>
           </div>
         </nav>
 
@@ -60,7 +63,10 @@ export default function Home() {
           />
         </div>
 
-        <div className="mt-20 flex flex-col md:flex-row items-center justify-between">
+        <div
+          id="sobre"
+          className="mt-20 flex flex-col md:flex-row items-center justify-between"
+        >
           <Image
             className="w-full max-w-full md:max-w-xl"
             src={runSvg}
@@ -79,7 +85,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-20 flex justify-center">
+        <div id="precos" className="mt-20 flex justify-center">
           <Image
             className="w-full max-w-full md:max-w-2xl"
             src={plansSvg}
