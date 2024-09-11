@@ -1,0 +1,15 @@
+{
+  "commit-template": "({type}): {subject}",
+  "commit-types": {
+    "build": "Construído",
+    "chore": "Tarefa",
+    "docs": "Documentação",
+    "feat": "Adicionado",
+    "fix": "Corrigido",
+    "perf": "Melhoria",
+    "refactor": "Reorganizado",
+    "revert": "Revertido",
+    "style": "Formatação",
+    "test": "Teste"
+  }
+}
