@@ -1,4 +1,4 @@
-Projeto de uma landin-page feito para estudo, usando next-js, typescript e tailwindcss.
+##Projeto de uma landin-page feito para estudo, usando next-js, typescript e tailwindcss.
 
 <br>
 <br>
