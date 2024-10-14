@@ -1,7 +1,18 @@
-## Projeto de uma landin-page feito para estudo, usando next-js, typescript e tailwindcss.
+## Projeto de uma landin-page feito para estudo, usando next-js, typescript, tailwindcss e deploy na vercel.
+Projeto de uma landin-page fictícia para uma academia.
 
-<br>
-<br>
+# Variáveis de ambiente
+
+É Necessário criar uma conta e adquirir um plano no google cloud, criar um .env e adicionar as devidas informações
+
+```http
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=seu-email@gmail.com
+EMAIL_PASS=sua-senha-de-app-ou-senha-normal
+RECEIVER_EMAIL=receberemail@gmail.com
+```
 
  
  This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
