@@ -6,12 +6,12 @@ Projeto de uma landin-page fictícia para uma academia.
 É Necessário criar uma conta e adquirir um plano no google cloud, criar um .env e adicionar as devidas informações
 
 ```http
-EMAIL_HOST=smtp.gmail.com
+EMAIL_HOST=
 EMAIL_PORT=587
 EMAIL_SECURE=false
-EMAIL_USER=seu-email@gmail.com
+EMAIL_USER=seu-email
 EMAIL_PASS=sua-senha-de-app-ou-senha-normal
-RECEIVER_EMAIL=receberemail@gmail.com
+RECEIVER_EMAIL=receberemail
 ```
 
  
