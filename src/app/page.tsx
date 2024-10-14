@@ -1,11 +1,46 @@
+'use client';
+
 import Image from "next/image";
 import gymSvg from "../assets/gym.svg";
 import logoSvg from "../assets/logo.svg";
 import Link from "next/link";
 import runSvg from "../assets/run.svg";
 import plansSvg from "../assets/plans.svg";
+import { useState, FormEvent } from "react"
 
 export default function Home() {
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/trabalhe-conosco', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage(data.message);
+        setEmail('');
+      } else {
+        setMessage(data.error || 'Deu bigode na sua solicitação.');
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      setMessage('Deu bigode na solicitação maninho. Tente novamente mais tarde.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <main>
       <section
@@ -33,6 +68,11 @@ export default function Home() {
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
             >
               Preço
+            </a>
+            <a href="#trabalhe-conosco"
+              className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
+            >
+              Trabalhe Conosco 
             </a>
 
             <a
@@ -138,6 +178,43 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+        <div id="trabalhe-conosco" className="mt-20">
+          <h2 className="text-2xl font-bold text-stone-800 text-center mb-8">
+            Trabalhe Conosco
+          </h2>
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-stone-700 font-bold mb-2">
+                Seu Email:
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="seuemail@exemplo.com"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md transition-colors ${
+                isLoading ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+            >
+              {isLoading ? 'Enviando...' : 'Enviar'}
+            </button>
+          </form>
+          {message && (
+            <p className={`mt-4 text-center font-bold ${
+              message.includes('sucesso') ? 'text-green-600' : 'text-red-600'
+            }`}>
+              {message}
+            </p>
+          )}
         </div>
         <footer className="mt-20 p-8 bg-stone-100 w-full">
           <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8">
