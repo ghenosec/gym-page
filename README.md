@@ -1,5 +1,11 @@
-## Projeto de uma landin-page feito para estudo, usando next-js, typescript, tailwindcss e deploy na vercel.
-Projeto de uma landin-page fictícia para uma academia.
+## Landin-page GYM STRONG
+
+Projeto de uma academia fictícia na qual se chama GYM STRONG.
+
+# Stacks
+[TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+[Next-JS](https://nextjs.org/docs)
+[TailwindCSS](https://tailwindcss.com/docs/installation)
 
 # Variáveis de ambiente
 
