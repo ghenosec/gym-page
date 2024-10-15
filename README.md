@@ -1,17 +1,23 @@
-## Projeto de uma landin-page feito para estudo, usando next-js, typescript, tailwindcss e deploy na vercel.
-Projeto de uma landin-page fictícia para uma academia.
+## Landin-page GYM STRONG
+
+Projeto de uma academia fictícia na qual se chama GYM STRONG.
+
+# Stacks
+- [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- [Next-JS](https://nextjs.org/docs)
+- [TailwindCSS](https://tailwindcss.com/docs/installation)
 
 # Variáveis de ambiente
 
 É Necessário criar uma conta e adquirir um plano no google cloud, criar um .env e adicionar as devidas informações
 
 ```http
-EMAIL_HOST=smtp.gmail.com
+EMAIL_HOST=
 EMAIL_PORT=587
 EMAIL_SECURE=false
-EMAIL_USER=seu-email@gmail.com
+EMAIL_USER=seu-email
 EMAIL_PASS=sua-senha-de-app-ou-senha-normal
-RECEIVER_EMAIL=receberemail@gmail.com
+RECEIVER_EMAIL=receberemail
 ```
 
  
