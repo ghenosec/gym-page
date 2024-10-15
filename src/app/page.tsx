@@ -67,7 +67,7 @@ export default function Home() {
               href="#precos"
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
             >
-              Preço
+              Planos
             </a>
             <a href="#trabalhe-conosco"
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
@@ -194,7 +194,7 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
                 placeholder="seuemail@exemplo.com"
               />
             </div>
