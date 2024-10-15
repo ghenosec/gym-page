@@ -256,7 +256,7 @@ export default function Home() {
               © 2024 GYM Strong. Todos os direitos reservados.
             </p>
             <p className="text-stone-700 mt-4 md:mt-0">
-              Criado por Lucas Gheno
+              Criado por Lucas C Gheno
             </p>
           </div>
         </footer>
