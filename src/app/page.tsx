@@ -191,44 +191,6 @@ export default function Home() {
               {message}
             </p>
           )}
-        </div>
-        <div id="trabalhe-conosco" className="mt-20">
-          <h2 className="text-2xl font-bold text-stone-800 text-center mb-8">
-            Trabalhe Conosco
-          </h2>
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-stone-700 font-bold mb-2">
-                Seu Email:
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
-                placeholder="seuemail@exemplo.com"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md transition-colors ${
-                isLoading ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
-            >
-              {isLoading ? 'Enviando...' : 'Enviar'}
-            </button>
-          </form>
-          {message && (
-            <p className={`mt-4 text-center font-bold ${
-              message.includes('sucesso') ? 'text-green-600' : 'text-red-600'
-            }`}>
-              {message}
-            </p>
-          )}
-        </div>
         <footer className="mt-20 p-8 bg-stone-100 w-full">
           <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="md:w-1/3">
