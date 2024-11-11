@@ -138,21 +138,21 @@ export default function Home() {
           Nossos Planos
               </h2>
               <div className="flex flex-col md:flex-row justify-center gap-8">
-                <PricingCard
-                  title="Plano Básico"
-                  description="Ideal para quem está começando e quer treinar 3 vezes por semana."
-                  price="R$ 99,90/mês"
-                />
-                <PricingCard
-                  title="Plano Intermediário"
-                  description="Perfeito para quem já tem alguma experiência e treina 5 vezes por semana."
-                  price="R$ 149,90/mês"
-                />
-                <PricingCard
-                  title="Plano Premium"
-                  description="O pacote completo com acesso ilimitado e acompanhamento personalizado."
-                  price="R$ 199,90/mês"
-                />
+              <PricingCard
+                    title="Plano Básico"
+                    description="Ideal para quem está começando e quer treinar 3 vezes por semana."
+                    price="R$ 99,90/mês"
+                  />
+                  <PricingCard
+                    title="Plano Intermediário"
+                    description="Perfeito para quem já tem alguma experiência e treina 5 vezes por semana."
+                    price="R$ 149,90/mês"
+                  />
+                  <PricingCard
+                    title="Plano Premium"
+                    description="O pacote completo com acesso ilimitado e acompanhamento personalizado."
+                    price="R$ 199,90/mês"
+                  />
            </div>
         </div>
         <div id="trabalhe-conosco" className="mt-20">
