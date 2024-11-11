@@ -42,7 +42,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-  return (
+  return ( 
     <main>
       <section
         id="home"
@@ -191,6 +191,7 @@ export default function Home() {
               {message}
             </p>
           )}
+        </div>
         <footer className="mt-20 p-8 bg-stone-100 w-full">
           <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-8">
             <div className="md:w-1/3">
