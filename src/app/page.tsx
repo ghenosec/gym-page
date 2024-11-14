@@ -11,6 +11,7 @@ import { useState, FormEvent } from "react"
 
 export default function Home() {
   const [email, setEmail] = useState<string>('');
+  const [feedback, setFeedback] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -19,12 +20,12 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/trabalhe-conosco', {
+      const response = await fetch('/api/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, feedback }),
       });
 
       const data = await response.json();
@@ -70,10 +71,10 @@ export default function Home() {
             >
               Planos
             </a>
-            <a href="#trabalhe-conosco"
+            <a href="#feedback"
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
             >
-              Trabalhe Conosco 
+              Feedback 
             </a>
 
             <a
@@ -134,7 +135,7 @@ export default function Home() {
               alt="Ilustração dos planos da academia."
             />
             </div>
-                <h2 className="text-2xl font-bold text-stone-800 text-center mb-8">
+                <h2 className="text-3xl font-bold text-blue-700 text-center mb-8">
           Nossos Planos
               </h2>
               <div className="flex flex-col md:flex-row justify-center gap-8">
@@ -155,9 +156,9 @@ export default function Home() {
                   />
            </div>
         </div>
-        <div id="trabalhe-conosco" className="mt-20">
-          <h2 className="text-2xl font-bold text-stone-800 text-center mb-8">
-            Trabalhe Conosco
+        <div id="feedback" className="mt-20">
+          <h2 className="text-3xl font-bold text-blue-700 text-center mb-8">
+            Deixe seu Feedback!
           </h2>
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <div className="mb-4">
@@ -172,6 +173,19 @@ export default function Home() {
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
                 placeholder="seuemail@exemplo.com"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="feedback" className="block text-stone-700 font-bold mb-2">
+                Seu Feedback:
+              </label>
+              <textarea
+                id="feedback"
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-700"
+                placeholder="Digite seu feedback aqui..."
               />
             </div>
             <button
