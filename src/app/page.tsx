@@ -126,18 +126,17 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-          <div id="precos" className="mt-4">
-            <div className="flex justify-center mb-8">
+        <div id="precos" className="mt-4">
+        <h2 className="text-3xl font-bold text-blue-700 text-center">
+          Nossos Planos
+              </h2>
+            <div className="flex justify-center">
               <Image
               className="w-full max-w-full md:max-w-2xl"
               src={plansSvg}
               alt="Ilustração dos planos da academia."
             />
             </div>
-                <h2 className="text-3xl font-bold text-blue-700 text-center mb-8">
-          Nossos Planos
-              </h2>
               <div className="flex flex-col md:flex-row justify-center gap-8">
               <PricingCard
                     title="Plano Básico"
