@@ -1,51 +1,15 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
+import { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
-  message?: string
-  error?: string
-}
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'POST') {
+    const { email, feedback } = req.body;
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' })
-  }
-
-  const { email } = req.body
-
-  if (!email) {
-    return res.status(400).json({ error: 'Email é obrigatório' })
-  }
-
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
-    secure: process.env.EMAIL_SECURE === 'true',
-    auth: {
-      user: process.env.EMAIL_USER, 
-      pass: process.env.EMAIL_PASS,  
+    if (!email || !feedback) {
+      return res.status(400).json({ error: 'Por favor, preencha todos os campos.' });
     }
-  })
-
-  const mailOptions = {
-    from: email, 
-    to: process.env.RECEIVER_EMAIL, 
-    subject: 'Novo Feedback',
-    text: `Recebemos umo novo Feedback do email: ${email}`,
-    html: `
-      <h1>Novo Feedback</h1>
-      <p>Recebemos umo novo Feedback do email: <strong>${email}</strong></p>
-    `
-  }
-
-  try {
-    await transporter.sendMail(mailOptions)
-    res.status(200).json({ message: 'Feedback enviado com sucesso!' })
-  } catch (error) {
-    console.error('Erro ao enviar feedback:', error)
-    res.status(500).json({ error: 'Deu bigode ao enviar seu Feedback mano' })
+    res.status(200).json({ message: 'Feedback enviado com sucesso!' });
+  } else {
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Método ${req.method} não permitido`);
   }
 }
