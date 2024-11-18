@@ -16,6 +16,7 @@ export default function Home() {
   const [feedback, setFeedback] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -62,8 +63,12 @@ export default function Home() {
               alt="Logomarca da academia"
             />
           </Link>
-
           <div className="links flex gap-4 items-center mt-4 md:mt-0">
+            <a 
+            href="#home"
+            className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
+            > Home 
+            </a>
             <a
               href="#sobre"
               className="font-bold text-stone-700 hover:text-blue-700 transition-colors"
@@ -88,7 +93,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="cta-button font-bold px-5 py-3 text-white bg-blue-700 hover:bg-blue-800 transition-colors rounded-full "
             >
-              Começar
+              Testar
             </a>
           </div>
         </nav>
@@ -234,13 +239,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-
           <div className="flex flex-col md:flex-row items-center justify-between mt-12 border-t pt-8">
             <div className="flex items-center">
               <Image
                 className="h-8 w-8"
                 src={logoSvg}
                 alt="Logomarca da academia"
+                onClick={() => window.scrollTo(0, 0)}
               />
               <span className="text-lg font-bold text-stone-800 ml-4">
                 GYM Strong
