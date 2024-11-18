@@ -1,13 +1,24 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { email, feedback } = req.body;
+    try {
+      const response = await fetch('https://REGION-PROJECT_ID.cloudfunctions.net/email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(req.body),
+      });
 
-    if (!email || !feedback) {
-      return res.status(400).json({ error: 'Por favor, preencha todos os campos.' });
+      const result = await response.json();
+
+      if (response.ok) {
+        res.status(200).json(result);
+      } else {
+        res.status(response.status).json(result);
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Erro interno no servidor.' });
     }
-    res.status(200).json({ message: 'Feedback enviado com sucesso!' });
   } else {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Método ${req.method} não permitido`);

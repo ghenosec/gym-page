@@ -18,31 +18,34 @@ export default function Home() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+    setMessage('');
 
     try {
-      const response = await fetch('/api/feedback', {
+      const response = await fetch('https://REGION-PROJECT_ID.cloudfunctions.net/email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, feedback }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          to: 'lucasgheno600@gmail.com',
+          body: feedback,
+          name: email,
+        }),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
       if (response.ok) {
-        setMessage(data.message);
-        setEmail('');
+        setMessage('Seu feedback foi enviado com sucesso!');
       } else {
-        setMessage(data.error || 'Deu bigode na sua solicitação.');
+        setMessage(`Erro: ${result.error || 'Não foi possível enviar o feedback.'}`);
       }
     } catch (error) {
-      console.error('Erro:', error);
-      setMessage('Deu bigode na solicitação maninho. Tente novamente mais tarde.');
+      console.error(error);
+      setMessage('Erro ao conectar ao servidor.');
     } finally {
       setIsLoading(false);
     }
   };
+  
   return ( 
     <main>
       <section
@@ -251,5 +254,6 @@ export default function Home() {
         </footer>
       </section>
     </main>
-  );
+ );
 }
+
