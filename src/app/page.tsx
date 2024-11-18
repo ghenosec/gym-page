@@ -1,5 +1,6 @@
 'use client';
 
+require('dotenv').config();
 import Image from "next/image";
 import gymSvg from "../assets/gym.svg";
 import logoSvg from "../assets/logo.svg";
@@ -8,6 +9,7 @@ import runSvg from "../assets/run.svg";
 import plansSvg from "../assets/plans.svg";
 import PricingCard from "@/components/PricingCard";
 import { useState, FormEvent } from "react"
+
 
 export default function Home() {
   const [email, setEmail] = useState<string>('');
@@ -21,13 +23,13 @@ export default function Home() {
     setMessage('');
 
     try {
-      const response = await fetch('https://REGION-PROJECT_ID.cloudfunctions.net/email', {
+      const response = await fetch('https://us-central1-sandro-email.cloudfunctions.net/enviar-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           to: 'lucasgheno600@gmail.com',
-          body: feedback,
-          name: email,
+          body: feedback,  
+          name: email,     
         }),
       });
 
@@ -45,7 +47,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-  
+
   return ( 
     <main>
       <section

@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
-      const response = await fetch('https://REGION-PROJECT_ID.cloudfunctions.net/email', {
+      const response = await fetch('https://us-central1-sandro-email.cloudfunctions.net/enviar-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(req.body),
